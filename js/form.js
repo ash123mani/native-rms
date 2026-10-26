@@ -4,7 +4,6 @@
   const config = window.RMS.config;
   const repository = window.RMS.repository;
   const validators = window.RMS.validators;
-  const toast = window.RMS.toast;
 
   const form = document.getElementById('resultForm');
   if (!form) {
@@ -95,7 +94,6 @@
 
     if (!saved.ok) {
       validators.announce(saved.error);
-      toast.show(saved.error, 'danger');
       return;
     }
 
@@ -106,7 +104,6 @@
 
     const message = 'Result for roll number ' + saved.record.roll + ' added successfully.';
     validators.announce(message);
-    toast.show(message);
   });
 
   config.fields.forEach(function (name) {

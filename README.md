@@ -26,7 +26,7 @@ Then visit <http://localhost:8000>.
 index.html        Home page
 form.html         Add result form
 css/              Design tokens, base, layout, components, utilities
-js/               Config, storage, repository, validators, UI, toasts, controllers
+js/               Config, storage, repository, validators, UI, controllers
 ```
 
 Results are saved in the browser's `localStorage`.

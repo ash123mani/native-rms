@@ -71,9 +71,3 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
-
-@media print {
-  .rms-toasts {
-    display: none !important;
-  }
-}

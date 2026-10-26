@@ -4,7 +4,6 @@
   const repository = window.RMS.repository;
   const ui = window.RMS.ui;
   const validators = window.RMS.validators;
-  const toast = window.RMS.toast;
 
   const tableBody = document.getElementById('resultsBody');
   if (!tableBody) {
@@ -98,7 +97,6 @@
     if (repository.remove(id)) {
       render();
       validators.announce('Result deleted.');
-      toast.show('Result deleted successfully.');
     }
   }
 
