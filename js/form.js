@@ -3,7 +3,6 @@
 
   const config = window.RMS.config;
   const repository = window.RMS.repository;
-  const ui = window.RMS.ui;
   const validators = window.RMS.validators;
   const toast = window.RMS.toast;
 
@@ -127,6 +126,5 @@
     });
   });
 
-  ui.setCurrentYear();
   setDateBounds();
 })();

@@ -68,23 +68,3 @@
 .rms-page__bar {
   margin-bottom: var(--rms-space-6);
 }
-
-.rms-footer {
-  border-top: 1px solid var(--rms-color-line);
-  color: var(--rms-color-muted);
-  font-size: var(--rms-text-sm);
-}
-
-.rms-footer__inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--rms-space-2);
-  padding-block: var(--rms-space-4);
-}
-
-@media (max-width: 40rem) {
-  .rms-footer__inner {
-    flex-direction: column;
-  }
-}

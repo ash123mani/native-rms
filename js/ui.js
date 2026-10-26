@@ -52,18 +52,10 @@ window.RMS.ui = (function () {
     return Number.isInteger(value) ? String(value) : value.toFixed(2);
   }
 
-  function setCurrentYear() {
-    const node = document.getElementById('year');
-    if (node) {
-      node.textContent = String(new Date().getFullYear());
-    }
-  }
-
   return {
     el: el,
     icon: icon,
     formatDate: formatDate,
-    formatScore: formatScore,
-    setCurrentYear: setCurrentYear
+    formatScore: formatScore
   };
 })();

@@ -109,7 +109,6 @@
     }
   });
 
-  ui.setCurrentYear();
   render();
 
   if (!repository.isAvailable()) {

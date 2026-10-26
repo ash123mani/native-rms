@@ -14,9 +14,6 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   font-family: var(--rms-font-sans);
   font-size: var(--rms-text-base);
   line-height: var(--rms-leading-normal);
@@ -54,10 +51,6 @@ h2 {
   font-weight: var(--rms-weight-bold);
 }
 
-main {
-  flex: 1 0 auto;
-}
-
 a {
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
@@ -80,7 +73,6 @@ a {
 }
 
 @media print {
-  .rms-footer,
   .rms-toasts {
     display: none !important;
   }
