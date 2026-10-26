@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Result Management System - add a new student result.">
+  <meta name="author" content="Result Management System">
+  <meta name="color-scheme" content="light">
+  <title>Result Management System | Add Result</title>
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+</head>
+<body>
+
+  <svg class="rms-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8.5 12.5l2.5 2.5 4.5-5"/>
+    </symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 8v5M12 16.5v.01M10.3 3.9L2.6 17.4A2 2 0 0 0 4.3 20.4h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
+    </symbol>
+    <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 11v5M12 7.5v.01"/>
+    </symbol>
+  </svg>
+
+  <header class="rms-header">
+    <div class="rms-container rms-header__inner">
+      <a class="rms-header__title" href="index.html">Result Management System</a>
+    </div>
+  </header>
+
+  <main class="rms-container rms-page rms-page--form">
+
+    <div class="rms-page__bar">
+      <a class="rms-btn rms-btn--back" href="index.html" id="backButton">Back</a>
+    </div>
+
+    <section class="rms-measure">
+      <header class="rms-form__header">
+        <h1 class="rms-page__title rms-page__title--form">Add Student-Result</h1>
+      </header>
+
+      <form class="rms-form" id="resultForm" novalidate>
+
+        <div class="rms-field">
+          <label class="rms-field__label" for="rollNumber">Roll No. :</label>
+          <input type="number" class="rms-input" id="rollNumber" name="rollNumber"
+                 min="1" max="99999" step="1" inputmode="numeric" required
+                 placeholder="e.g. 101" autocomplete="off"
+                 aria-describedby="rollNumberError">
+          <p class="rms-field__error" id="rollNumberError"></p>
+        </div>
+
+        <div class="rms-field">
+          <label class="rms-field__label" for="studentName">Name:</label>
+          <input type="text" class="rms-input" id="studentName" name="studentName"
+                 minlength="3" maxlength="60" pattern="[A-Za-z][A-Za-z .'-]*" required
+                 placeholder="e.g. Ananya Sharma" autocomplete="name"
+                 aria-describedby="studentNameError">
+          <p class="rms-field__error" id="studentNameError"></p>
+        </div>
+
+        <div class="rms-field">
+          <label class="rms-field__label" for="dob">Date of Birth :</label>
+          <input type="date" class="rms-input" id="dob" name="dob" required
+                 aria-describedby="dobError">
+          <p class="rms-field__error" id="dobError"></p>
+        </div>
+
+        <div class="rms-field">
+          <label class="rms-field__label" for="score">Score :</label>
+          <input type="number" class="rms-input" id="score" name="score"
+                 min="0" max="100" step="0.01" inputmode="decimal" required
+                 placeholder="e.g. 85" aria-describedby="scoreError">
+          <p class="rms-field__error" id="scoreError"></p>
+        </div>
+
+        <div class="rms-actions">
+          <button type="submit" class="rms-btn rms-btn--primary" id="addButton">Add</button>
+          <button type="button" class="rms-btn rms-btn--secondary" id="viewAllButton">View All</button>
+        </div>
+
+      </form>
+    </section>
+  </main>
+
+  <footer class="rms-footer">
+    <div class="rms-container rms-footer__inner">
+      <span>Result Management System &middot; Custom CSS &middot; No dependencies</span>
+      <span>&copy; <span id="year">2026</span></span>
+    </div>
+  </footer>
+
+  <div class="rms-toasts" id="toastContainer"></div>
+
+  <p class="rms-visually-hidden" id="liveStatus" role="status" aria-live="polite"></p>
+
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/repository.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>

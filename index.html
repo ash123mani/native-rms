@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Result Management System - view the results of all students.">
+  <meta name="author" content="Result Management System">
+  <meta name="color-scheme" content="light">
+  <title>Result Management System | Home</title>
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+</head>
+<body>
+
+  <svg class="rms-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12h14"/>
+    </symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13M10 11v6M14 11v6"/>
+    </symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 4h6v3H9zM9 5.5H7a1 1 0 0 0-1 1V19a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6.5a1 1 0 0 0-1-1h-2M9 12h6M9 16h4"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8.5 12.5l2.5 2.5 4.5-5"/>
+    </symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 8v5M12 16.5v.01M10.3 3.9L2.6 17.4A2 2 0 0 0 4.3 20.4h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
+    </symbol>
+    <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 11v5M12 7.5v.01"/>
+    </symbol>
+  </svg>
+
+  <header class="rms-header">
+    <div class="rms-container rms-header__inner">
+      <a class="rms-header__title" href="index.html">Result Management System</a>
+    </div>
+  </header>
+
+  <main class="rms-container rms-page">
+
+    <section class="rms-page__top">
+      <div class="rms-page__intro">
+        <h1 class="rms-page__title">Student Results</h1>
+        <p class="rms-page__lead">Every result recorded by you, shown in one place.</p>
+      </div>
+
+      <a class="rms-btn rms-btn--primary" href="form.html">Add Student Result</a>
+    </section>
+
+    <section class="rms-card" id="resultsTable" aria-labelledby="resultsHeading">
+      <div class="rms-card__header">
+        <h2 class="rms-card__title" id="resultsHeading">
+          All Students
+          <span class="rms-card__count" id="recordCount">0 students</span>
+        </h2>
+      </div>
+
+      <div class="rms-card__body rms-card__body--flush">
+        <div class="rms-table__wrap">
+          <table class="rms-table">
+            <caption class="rms-visually-hidden">
+              List of all students with their roll number, date of birth, score and result status.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Roll No.</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Date of Birth</th>
+                <th scope="col">Score</th>
+                <th scope="col">Grade</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody"></tbody>
+          </table>
+        </div>
+
+        <div class="rms-empty rms-hidden" id="emptyState">
+          <svg class="rms-icon rms-icon--xl rms-empty__icon" aria-hidden="true" focusable="false"><use href="#i-clipboard"></use></svg>
+          <p class="rms-empty__title" id="emptyTitle">No results yet</p>
+          <p class="rms-empty__text" id="emptyText">Add your first student result to get started.</p>
+          <a class="rms-btn rms-btn--primary" href="form.html" id="emptyCta">
+            <svg class="rms-icon rms-icon--sm" aria-hidden="true" focusable="false"><use href="#i-plus"></use></svg>
+            Add Student Result
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rms-footer">
+    <div class="rms-container rms-footer__inner">
+      <span>Result Management System &middot; Custom CSS &middot; No dependencies</span>
+      <span>&copy; <span id="year">2026</span></span>
+    </div>
+  </footer>
+
+  <div class="rms-toasts" id="toastContainer"></div>
+
+  <p class="rms-visually-hidden" id="liveStatus" role="status" aria-live="polite"></p>
+
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/repository.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+:root {
+
+  color-scheme: light;
+
+  --rms-color-text: CanvasText;
+  --rms-color-muted: color-mix(in srgb, CanvasText 62%, Canvas);
+  --rms-color-faint: color-mix(in srgb, CanvasText 45%, Canvas);
+  --rms-color-surface: Canvas;
+  --rms-color-sunken: ButtonFace;
+  --rms-color-button-text: ButtonText;
+  --rms-color-line: color-mix(in srgb, CanvasText 12%, Canvas);
+  --rms-color-line-strong: #dde0e3;
+
+  --rms-color-header: #a1d9b3;
+  --rms-color-header-line: #cdebda;
+  --rms-color-add: #53a451;
+  --rms-color-add-strong: #438a41;
+  --rms-color-view: #3579f6;
+  --rms-color-view-strong: #2a63cf;
+  --rms-color-back: #4b9fb5;
+  --rms-color-back-strong: #3d879b;
+  --rms-color-on-color: #ffffff;
+
+  --rms-font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif;
+
+  --rms-text-xs: 0.75rem;
+  --rms-text-sm: 0.875rem;
+  --rms-text-base: 0.9375rem;
+  --rms-text-md: 1rem;
+  --rms-text-lg: 1.125rem;
+  --rms-text-xl: 1.375rem;
+  --rms-text-2xl: 1.75rem;
+
+  --rms-weight-regular: 400;
+  --rms-weight-medium: 500;
+  --rms-weight-semibold: 600;
+  --rms-weight-bold: 700;
+
+  --rms-leading-tight: 1.25;
+  --rms-leading-normal: 1.5;
+
+  --rms-space-1: 0.25rem;
+  --rms-space-2: 0.5rem;
+  --rms-space-3: 0.75rem;
+  --rms-space-4: 1rem;
+  --rms-space-5: 1.5rem;
+  --rms-space-6: 2rem;
+  --rms-space-7: 3rem;
+
+  --rms-radius-sm: 3px;
+  --rms-radius-md: 8px;
+
+  --rms-shadow-sm: 0 1px 2px color-mix(in srgb, CanvasText 8%, transparent);
+  --rms-shadow-md: 0 2px 6px color-mix(in srgb, CanvasText 12%, transparent);
+
+  --rms-duration-fast: 120ms;
+  --rms-duration-base: 180ms;
+  --rms-duration-slow: 280ms;
+  --rms-easing: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --rms-container-width: 1240px;
+  --rms-container-pad: var(--rms-space-5);
+  --rms-header-height: 3.625rem;
+
+  --rms-z-navbar: 100;
+  --rms-z-toast: 200;
+}
