@@ -20,18 +20,6 @@ window.RMS.ui = (function () {
         node.setAttribute(name, opts.attrs[name]);
       });
     }
-    if (opts.dataset) {
-      Object.keys(opts.dataset).forEach(function (name) {
-        node.dataset[name] = opts.dataset[name];
-      });
-    }
-    if (opts.children) {
-      opts.children.forEach(function (child) {
-        if (child) {
-          node.appendChild(child);
-        }
-      });
-    }
     return node;
   }
 
@@ -64,10 +52,6 @@ window.RMS.ui = (function () {
     return Number.isInteger(value) ? String(value) : value.toFixed(2);
   }
 
-  function pageUrl(page) {
-    return new URL(page, window.location.href).href;
-  }
-
   function setCurrentYear() {
     const node = document.getElementById('year');
     if (node) {
@@ -80,7 +64,6 @@ window.RMS.ui = (function () {
     icon: icon,
     formatDate: formatDate,
     formatScore: formatScore,
-    pageUrl: pageUrl,
     setCurrentYear: setCurrentYear
   };
 })();

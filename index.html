@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Result Management System - view the results of all students.">
-  <meta name="author" content="Result Management System">
   <meta name="color-scheme" content="light">
   <title>Result Management System | Home</title>
 
@@ -36,9 +35,6 @@
     <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 8v5M12 16.5v.01M10.3 3.9L2.6 17.4A2 2 0 0 0 4.3 20.4h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
     </symbol>
-    <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 11v5M12 7.5v.01"/>
-    </symbol>
   </svg>
 
   <header class="rms-header">
@@ -50,7 +46,7 @@
   <main class="rms-container rms-page">
 
     <section class="rms-page__top">
-      <div class="rms-page__intro">
+      <div>
         <h1 class="rms-page__title">Student Results</h1>
         <p class="rms-page__lead">Every result recorded by you, shown in one place.</p>
       </div>
@@ -58,7 +54,7 @@
       <a class="rms-btn rms-btn--primary" href="form.html">Add Student Result</a>
     </section>
 
-    <section class="rms-card" id="resultsTable" aria-labelledby="resultsHeading">
+    <section class="rms-card" aria-labelledby="resultsHeading">
       <div class="rms-card__header">
         <h2 class="rms-card__title" id="resultsHeading">
           All Students
@@ -66,37 +62,35 @@
         </h2>
       </div>
 
-      <div class="rms-card__body rms-card__body--flush">
-        <div class="rms-table__wrap">
-          <table class="rms-table">
-            <caption class="rms-visually-hidden">
-              List of all students with their roll number, date of birth, score and result status.
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Roll No.</th>
-                <th scope="col">Student Name</th>
-                <th scope="col">Date of Birth</th>
-                <th scope="col">Score</th>
-                <th scope="col">Grade</th>
-                <th scope="col">Status</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thead>
-            <tbody id="resultsBody"></tbody>
-          </table>
-        </div>
+      <div class="rms-table__wrap">
+        <table class="rms-table">
+          <caption class="rms-visually-hidden">
+            List of all students with their roll number, date of birth, score and result status.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Roll No.</th>
+              <th scope="col">Student Name</th>
+              <th scope="col">Date of Birth</th>
+              <th scope="col">Score</th>
+              <th scope="col">Grade</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody"></tbody>
+        </table>
+      </div>
 
-        <div class="rms-empty rms-hidden" id="emptyState">
-          <svg class="rms-icon rms-icon--xl rms-empty__icon" aria-hidden="true" focusable="false"><use href="#i-clipboard"></use></svg>
-          <p class="rms-empty__title" id="emptyTitle">No results yet</p>
-          <p class="rms-empty__text" id="emptyText">Add your first student result to get started.</p>
-          <a class="rms-btn rms-btn--primary" href="form.html" id="emptyCta">
-            <svg class="rms-icon rms-icon--sm" aria-hidden="true" focusable="false"><use href="#i-plus"></use></svg>
-            Add Student Result
-          </a>
-        </div>
+      <div class="rms-empty rms-hidden" id="emptyState">
+        <svg class="rms-icon rms-icon--xl rms-empty__icon" aria-hidden="true" focusable="false"><use href="#i-clipboard"></use></svg>
+        <p class="rms-empty__title">No results yet</p>
+        <p class="rms-empty__text">Add your first student result to get started.</p>
+        <a class="rms-btn rms-btn--primary" href="form.html">
+          <svg class="rms-icon rms-icon--sm" aria-hidden="true" focusable="false"><use href="#i-plus"></use></svg>
+          Add Student Result
+        </a>
       </div>
     </section>
   </main>
@@ -110,7 +104,7 @@
 
   <div class="rms-toasts" id="toastContainer"></div>
 
-  <p class="rms-visually-hidden" id="liveStatus" role="status" aria-live="polite"></p>
+  <p class="rms-visually-hidden" id="liveStatus" role="status"></p>
 
   <script src="js/config.js"></script>
   <script src="js/storage.js"></script>

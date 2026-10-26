@@ -41,7 +41,6 @@ window.RMS.validators = (function (config) {
   const RULES = {
     rollNumber: {
       label: 'Roll number',
-      required: true,
       validate: function (value, context) {
         if (!/^\d+$/.test(value)) {
           return 'Roll number must contain digits only.';
@@ -60,7 +59,6 @@ window.RMS.validators = (function (config) {
 
     studentName: {
       label: 'Student name',
-      required: true,
       validate: function (value) {
         if (value.length < limits.nameMin) {
           return 'Student name must be at least ' + limits.nameMin + ' characters long.';
@@ -77,7 +75,6 @@ window.RMS.validators = (function (config) {
 
     dob: {
       label: 'Date of birth',
-      required: true,
       validate: function (value) {
         const dob = parseISODate(value);
         if (!dob) {
@@ -100,7 +97,6 @@ window.RMS.validators = (function (config) {
 
     score: {
       label: 'Score',
-      required: true,
       validate: function (value) {
         const decimals = '\\.\\d{1,' + config.score.decimals + '}';
         if (!new RegExp('^\\d+(' + decimals + ')?$').test(value)) {
@@ -122,7 +118,7 @@ window.RMS.validators = (function (config) {
     }
     const value = String(rawValue == null ? '' : rawValue).trim();
     if (value === '') {
-      return rule.required ? rule.label + ' is required.' : '';
+      return rule.label + ' is required.';
     }
     return rule.validate(value, context || {}) || '';
   }
@@ -180,8 +176,6 @@ window.RMS.validators = (function (config) {
     setFieldState: setFieldState,
     announce: announce,
     parseISODate: parseISODate,
-    ageOn: ageOn,
-    todayISO: todayISO,
-    rules: RULES
+    todayISO: todayISO
   };
 })(window.RMS.config);

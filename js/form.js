@@ -12,27 +12,14 @@
     return;
   }
 
-  const FIELD_ELEMENTS = {
-    rollNumber: { input: 'rollNumber', feedback: 'rollNumberError' },
-    studentName: { input: 'studentName', feedback: 'studentNameError' },
-    dob: { input: 'dob', feedback: 'dobError' },
-    score: { input: 'score', feedback: 'scoreError' }
-  };
-
   const fields = {};
 
   config.fields.forEach(function (name) {
-    const map = FIELD_ELEMENTS[name];
-    if (!map) {
-      return;
-    }
     fields[name] = {
-      input: document.getElementById(map.input),
-      feedback: document.getElementById(map.feedback)
+      input: document.getElementById(name),
+      feedback: document.getElementById(name + 'Error')
     };
   });
-
-  const viewAllButton = document.getElementById('viewAllButton');
 
   let submitAttempted = false;
 
@@ -53,7 +40,7 @@
   function validateField(name) {
     const field = fields[name];
     if (!field || !field.input) {
-      return true;
+      return;
     }
     const value = field.input.value.trim();
 
@@ -61,7 +48,6 @@
       ? ''
       : validators.validateField(name, field.input.value, { existingRolls: existingRolls() });
     validators.setFieldState(field.input, field.feedback, message);
-    return !message;
   }
 
   function setDateBounds() {
@@ -110,7 +96,7 @@
 
     if (!saved.ok) {
       validators.announce(saved.error);
-      toast.show(saved.error, { tone: 'danger' });
+      toast.show(saved.error, 'danger');
       return;
     }
 
@@ -121,7 +107,7 @@
 
     const message = 'Result for roll number ' + saved.record.roll + ' added successfully.';
     validators.announce(message);
-    toast.show(message, { tone: 'success' });
+    toast.show(message);
   });
 
   config.fields.forEach(function (name) {
@@ -135,18 +121,11 @@
     });
 
     field.input.addEventListener('input', function () {
-
       if (field.input.classList.contains('rms-input--invalid')) {
         validateField(name);
       }
     });
   });
-
-  if (viewAllButton) {
-    viewAllButton.addEventListener('click', function () {
-      window.location.href = ui.pageUrl(config.pages.home) + '#resultsTable';
-    });
-  }
 
   ui.setCurrentYear();
   setDateBounds();

@@ -30,18 +30,6 @@ window.RMS.repository = (function (config, storage) {
     });
   }
 
-  function getByRoll(roll) {
-    const key = String(roll).trim();
-    const match = list().find(function (item) {
-      return String(item.roll) === key;
-    });
-    return match || null;
-  }
-
-  function find(predicate) {
-    return list().filter(predicate);
-  }
-
   function add(data) {
     const score = Number(data.score);
     const record = {
@@ -76,17 +64,10 @@ window.RMS.repository = (function (config, storage) {
     return adapter.write(remaining).ok;
   }
 
-  function clear() {
-    return adapter.remove();
-  }
-
   return {
     list: list,
-    getByRoll: getByRoll,
-    find: find,
     add: add,
     remove: remove,
-    clear: clear,
     gradeFor: gradeFor,
     statusFor: statusFor,
     isAvailable: adapter.isAvailable

@@ -13,8 +13,6 @@
 
   const table = tableBody.closest('table');
   const emptyState = document.getElementById('emptyState');
-  const emptyTitle = document.getElementById('emptyTitle');
-  const emptyText = document.getElementById('emptyText');
   const recordCount = document.getElementById('recordCount');
 
   function cell(text) {
@@ -61,7 +59,6 @@
   }
 
   function renderRows(records) {
-
     const fragment = document.createDocumentFragment();
     records.forEach(function (record, index) {
       fragment.appendChild(buildRow(record, index + 1));
@@ -73,13 +70,6 @@
   function renderEmptyState(hasRecords) {
     emptyState.classList.toggle('rms-hidden', hasRecords);
     table.classList.toggle('rms-hidden', !hasRecords);
-
-    if (hasRecords) {
-      return;
-    }
-
-    emptyTitle.textContent = 'No results yet';
-    emptyText.textContent = 'Add your first student result to get started.';
   }
 
   function render() {
@@ -108,7 +98,7 @@
     if (repository.remove(id)) {
       render();
       validators.announce('Result deleted.');
-      toast.show('Result deleted successfully.', { tone: 'success' });
+      toast.show('Result deleted successfully.');
     }
   }
 

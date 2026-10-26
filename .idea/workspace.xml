@@ -16,6 +16,11 @@
       <change afterPath="$PROJECT_DIR$/../image-2-doc/css/home-page.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../video-chat-app/server.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../wellfair/.idea/welfare.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/components.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/components.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +28,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -77,7 +82,7 @@
       <workItem from="1792571831693" duration="752000" />
       <workItem from="1792573087263" duration="2799000" />
       <workItem from="1792654332853" duration="1115000" />
-      <workItem from="1793004876522" duration="2391000" />
+      <workItem from="1793004876522" duration="2766000" />
     </task>
     <servers />
   </component>

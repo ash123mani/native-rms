@@ -3,12 +3,9 @@ window.RMS = window.RMS || {};
 window.RMS.toast = (function (ui) {
   'use strict';
 
-  const DEFAULT_DURATION = 3600;
-
   const TONE_ICON = {
     success: 'check-circle',
-    danger: 'alert',
-    info: 'info'
+    danger: 'alert'
   };
 
   function dismiss(toast) {
@@ -25,24 +22,20 @@ window.RMS.toast = (function (ui) {
     }, 200);
   }
 
-  function show(message, options) {
-    const opts = options || {};
-    const tone = opts.tone || 'success';
-    const duration = opts.duration || DEFAULT_DURATION;
-    const container = document.getElementById(opts.containerId || 'toastContainer');
+  function show(message, tone) {
+    const kind = tone === 'danger' ? 'danger' : 'success';
+    const container = document.getElementById('toastContainer');
 
     if (!container) {
       return null;
     }
 
     const toast = ui.el('div', {
-      className: 'rms-toast rms-toast--' + tone,
-
-      attrs: { role: tone === 'danger' ? 'alert' : 'status' }
+      className: 'rms-toast rms-toast--' + kind,
+      attrs: { role: kind === 'danger' ? 'alert' : 'status' }
     });
 
-    const icon = ui.icon(TONE_ICON[tone] || 'info', 'rms-icon rms-toast__icon');
-    toast.appendChild(icon);
+    toast.appendChild(ui.icon(TONE_ICON[kind], 'rms-icon rms-toast__icon'));
     toast.appendChild(ui.el('p', { className: 'rms-toast__body', text: message }));
 
     const close = ui.el('button', {
@@ -57,26 +50,14 @@ window.RMS.toast = (function (ui) {
 
     container.appendChild(toast);
 
-    if (duration > 0) {
-      window.setTimeout(function () {
-        dismiss(toast);
-      }, duration);
-    }
+    window.setTimeout(function () {
+      dismiss(toast);
+    }, 3600);
 
     return toast;
   }
 
-  function clearAll() {
-    const container = document.getElementById('toastContainer');
-    if (!container) {
-      return;
-    }
-    Array.prototype.slice.call(container.children).forEach(dismiss);
-  }
-
   return {
-    show: show,
-    dismiss: dismiss,
-    clearAll: clearAll
+    show: show
   };
 })(window.RMS.ui);

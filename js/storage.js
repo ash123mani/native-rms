@@ -4,7 +4,6 @@ window.RMS.storage = (function () {
   'use strict';
 
   function createAdapter(key) {
-
     function read() {
       try {
         const raw = window.localStorage.getItem(key);
@@ -33,16 +32,6 @@ window.RMS.storage = (function () {
       }
     }
 
-    function remove() {
-      try {
-        window.localStorage.removeItem(key);
-        return { ok: true };
-      } catch (error) {
-        console.error('[RMS] Unable to clear stored data.', error);
-        return { ok: false, error: 'Results could not be cleared.' };
-      }
-    }
-
     function isAvailable() {
       try {
         const probe = '__rms_probe__';
@@ -57,7 +46,6 @@ window.RMS.storage = (function () {
     return {
       read: read,
       write: write,
-      remove: remove,
       isAvailable: isAvailable
     };
   }

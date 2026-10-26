@@ -1,5 +1,4 @@
 :root {
-
   color-scheme: light;
 
   --rms-color-text: CanvasText;
@@ -7,7 +6,6 @@
   --rms-color-faint: color-mix(in srgb, CanvasText 45%, Canvas);
   --rms-color-surface: Canvas;
   --rms-color-sunken: ButtonFace;
-  --rms-color-button-text: ButtonText;
   --rms-color-line: color-mix(in srgb, CanvasText 12%, Canvas);
   --rms-color-line-strong: #dde0e3;
 
@@ -63,6 +61,6 @@
   --rms-container-pad: var(--rms-space-5);
   --rms-header-height: 3.625rem;
 
-  --rms-z-navbar: 100;
+  --rms-z-header: 100;
   --rms-z-toast: 200;
 }

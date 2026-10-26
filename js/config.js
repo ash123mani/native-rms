@@ -1,16 +1,8 @@
 window.RMS = window.RMS || {};
 
 window.RMS.config = {
-  appName: 'Result Management System',
-  version: '1.0.0',
-
   storage: {
     key: 'rms.results.v1'
-  },
-
-  pages: {
-    home: 'index.html',
-    form: 'form.html'
   },
 
   passMark: 40,

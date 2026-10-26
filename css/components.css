@@ -27,10 +27,8 @@
   justify-content: center;
   gap: var(--rms-space-2);
   padding: 0.5rem 0.9rem;
-  background: var(--rms-color-sunken);
-  border: 1px solid var(--rms-color-line-strong);
+  border: 1px solid transparent;
   border-radius: var(--rms-radius-sm);
-  color: var(--rms-color-button-text);
   font-size: var(--rms-text-base);
   font-weight: var(--rms-weight-medium);
   line-height: 1.4;
@@ -39,11 +37,6 @@
   cursor: pointer;
   transition: background-color var(--rms-duration-fast) var(--rms-easing),
     border-color var(--rms-duration-fast) var(--rms-easing);
-}
-
-.rms-btn:hover {
-  background: var(--rms-color-surface);
-  border-color: var(--rms-color-text);
 }
 
 .rms-btn--primary {
@@ -82,12 +75,6 @@
   border-color: var(--rms-color-back-strong);
 }
 
-.rms-btn:disabled,
-.rms-btn[aria-disabled="true"] {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
 .rms-btn--danger-ghost {
   background: transparent;
   border-color: transparent;
@@ -102,22 +89,15 @@
 
 .rms-btn--icon {
   padding: 0.25rem;
-  border-radius: var(--rms-radius-sm);
 }
 
 .rms-card {
-  background: var(--rms-color-surface);
   border: 1px solid var(--rms-color-line);
   border-radius: var(--rms-radius-md);
   box-shadow: var(--rms-shadow-sm);
 }
 
 .rms-card__header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--rms-space-3);
   padding: var(--rms-space-4);
   border-bottom: 1px solid var(--rms-color-line);
 }
@@ -136,14 +116,6 @@
   font-weight: var(--rms-weight-regular);
 }
 
-.rms-card__body {
-  padding: var(--rms-space-5);
-}
-
-.rms-card__body--flush {
-  padding: 0;
-}
-
 .rms-field {
   display: flex;
   flex-direction: column;
@@ -151,14 +123,12 @@
 }
 
 .rms-field__label {
-  color: var(--rms-color-text);
   font-size: var(--rms-text-sm);
   font-weight: var(--rms-weight-medium);
 }
 
 .rms-field__error {
   display: none;
-  color: var(--rms-color-text);
   font-size: var(--rms-text-xs);
   font-weight: var(--rms-weight-semibold);
 }
@@ -219,7 +189,6 @@
 .rms-actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
   gap: 2.25rem;
   margin-top: var(--rms-space-4);
 }
@@ -299,7 +268,6 @@
   border: 1px solid var(--rms-color-line-strong);
   border-radius: var(--rms-radius-sm);
   background: var(--rms-color-surface);
-  color: var(--rms-color-text);
   font-size: var(--rms-text-sm);
   box-shadow: var(--rms-shadow-md);
   pointer-events: auto;

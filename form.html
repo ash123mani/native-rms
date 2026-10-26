@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Result Management System - add a new student result.">
-  <meta name="author" content="Result Management System">
   <meta name="color-scheme" content="light">
   <title>Result Management System | Add Result</title>
 
@@ -27,9 +26,6 @@
     <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 8v5M12 16.5v.01M10.3 3.9L2.6 17.4A2 2 0 0 0 4.3 20.4h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
     </symbol>
-    <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 11v5M12 7.5v.01"/>
-    </symbol>
   </svg>
 
   <header class="rms-header">
@@ -41,7 +37,7 @@
   <main class="rms-container rms-page rms-page--form">
 
     <div class="rms-page__bar">
-      <a class="rms-btn rms-btn--back" href="index.html" id="backButton">Back</a>
+      <a class="rms-btn rms-btn--back" href="index.html">Back</a>
     </div>
 
     <section class="rms-measure">
@@ -85,8 +81,8 @@
         </div>
 
         <div class="rms-actions">
-          <button type="submit" class="rms-btn rms-btn--primary" id="addButton">Add</button>
-          <button type="button" class="rms-btn rms-btn--secondary" id="viewAllButton">View All</button>
+          <button type="submit" class="rms-btn rms-btn--primary">Add</button>
+          <a class="rms-btn rms-btn--secondary" href="index.html">View All</a>
         </div>
 
       </form>
@@ -102,7 +98,7 @@
 
   <div class="rms-toasts" id="toastContainer"></div>
 
-  <p class="rms-visually-hidden" id="liveStatus" role="status" aria-live="polite"></p>
+  <p class="rms-visually-hidden" id="liveStatus" role="status"></p>
 
   <script src="js/config.js"></script>
   <script src="js/storage.js"></script>

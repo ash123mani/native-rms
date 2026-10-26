@@ -10,7 +10,15 @@ place. Built with plain HTML, CSS and JavaScript — no dependencies, no build s
 
 ## Run
 
-Open `index.html` in a browser.
+Open `index.html` directly in a browser — that is the whole setup.
+
+Or serve the folder over HTTP:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then visit <http://localhost:8000>.
 
 ## Structure
 
